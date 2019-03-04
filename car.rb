@@ -20,6 +20,15 @@ class Car
   # 加速用のメソッド追加
   def speed_up
     @speed += UP_SPEED
+    alert = "[ALERT]" # [ALERT]部分の変更に備えて変数alertを代入
+
+    # 30以上で警告。50以上で警告の上、20減速するif文を追加。
+    if @speed >= 50
+      puts "#{alert}スピードが#{@speed}になりました。減速します。"
+      @speed -= 20
+    elsif @speed >= 30
+      puts "#{alert}スピードが#{@speed}になりました。"
+    end
   end
 
   # 減速用のメソッド追加

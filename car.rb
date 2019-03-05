@@ -11,6 +11,8 @@ class Car
   # @speedが使えるようになる
   attr_reader :speed
 
+  @passengers = 0 # @passengersに0を代入して初期化
+
   def initialize(number, color) # initializeメソッドにpassengersを追加
     @number = number
     @color = color
@@ -28,7 +30,7 @@ class Car
     # 30以上でアラート表示。50以上でアラート表示の上、20減速するif文を追加。 (課題2-1)
     if @speed >= 50
       puts "#{alert}スピードが#{@speed}になりました。減速します。"
-      @speed -= DOWN_SPEED # 定数 DOWN_SPEEDは数値20 (Carクラスで定義)
+      self.speed_down # speed_downメソッドを呼び出す
     elsif @speed >= 30
       puts "#{alert}スピードが#{@speed}になりました。"
     end
@@ -52,7 +54,7 @@ class Car
   # get_onメソッドを追加。4人以上になると乗車できなくなる仕様。 (課題2-3)
   def get_on
     if @passengers >= MAX_PASSENGERS # MAX_PASSENGERS == 4
-      puts "乗車できません。この車の最大乗車人数は4人です。"
+      puts "乗車できません。この車の最大乗車人数は#{MAX_PASSENGERS}人です。"
     else
       @passengers += 1 # passengersに1を追加
       puts "乗車しました。"

@@ -61,6 +61,7 @@ class Car
     end
   end
 
+  # count_infoクラスメソッドを追加 (課題2-4)
   def self.count_info
     "Carクラスのクラス変数@@countは#{@@count}です。"
   end

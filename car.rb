@@ -39,12 +39,11 @@ class Car
   # 減速用のメソッド追加
   def speed_down
     # ifの結果を変数に代入する場合は以下の記述でOK
-    @speed =
-      if @speed - DOWN_SPEED < 0
-        0
-      else
-        @speed - DOWN_SPEED
-      end
+    @speed = if @speed - DOWN_SPEED < 0
+               0
+             else
+               @speed - DOWN_SPEED
+             end
   end
 
   def self.count

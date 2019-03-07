@@ -69,7 +69,7 @@ end
 class TrackCar < Car
   attr_reader :load_weight
 
-  def initialize(number, color, load_weight=500)
+  def initialize(number, color, load_weight = 500)
     # 今後TrackCarクラスでnumber, colorが使えるようにCarクラスのinitializeメソッドを継承
     super(number, color)
     @load_weight = load_weight

@@ -7,7 +7,7 @@ class Animal
   end
 
   def cry
-    "#{@name}: #{@voice}"
+    "#{self.name}: #{voice}"
   end
 end
 
